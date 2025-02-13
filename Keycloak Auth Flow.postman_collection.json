@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "4d21f478-9103-4ed9-b580-1ad086dc98e0",
+		"name": "Keycloak Auth Flow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1206008"
+	},
+	"item": [
+		{
+			"name": "1. Get Access Token (Password Grant)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "test-client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "YOUR_CLIENT_SECRET",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "test-user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test-password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/test-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"test-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "test-client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "YOUR_CLIENT_SECRET",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "YOUR_REFRESH_TOKEN",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/test-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"test-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. User Info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_ACCESS_TOKEN"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/realms/test-realm/protocol/openid-connect/userinfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"test-realm",
+						"protocol",
+						"openid-connect",
+						"userinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "test-client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "YOUR_CLIENT_SECRET",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "YOUR_REFRESH_TOKEN",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/test-realm/protocol/openid-connect/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"test-realm",
+						"protocol",
+						"openid-connect",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
