@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9e6608e0-f9d6-4a37-9d03-c5525908fbde",
+		"_postman_id": "2f25c34e-9263-4e78-ab77-d0ddba870c1e",
 		"name": "Keycloak Auth Flow",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1206008"
@@ -42,6 +42,11 @@
 						{
 							"key": "password",
 							"value": "test-password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid profile email",
 							"type": "text"
 						}
 					]
