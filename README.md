@@ -6,5 +6,6 @@ This repo contains all the code needed to follow along with our **[YouTube Tutor
 
 Postman Download: [Download Postman](https://www.postman.com/downloads/)
 
-## Kubernetes Training
-If you find these tutorials helpful, check out our [Kubernetes Training course](https://kubernetestraining.io/)
+## Become a Cloud and DevOps Engineer
+
+Learn every tool that matters: https://rayanslim.com
